@@ -1,0 +1,5 @@
+{
+    "DATABASE_URL": "mongodb://localhost:23333",
+    "DATABASE_NAME": "dian",
+    "COLLECTION_NAME": "contacts"
+}
