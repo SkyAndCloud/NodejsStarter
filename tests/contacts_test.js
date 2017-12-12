@@ -20,7 +20,6 @@ let addContactsJsonSchema = {
                 contact_id: {type: 'string'},
                 phone: {type: 'string'},
                 name: {type: 'string'},
-                email: {type: 'string'}
             }
         }
     }
