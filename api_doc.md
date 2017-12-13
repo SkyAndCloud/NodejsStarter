@@ -1,6 +1,7 @@
 # Dian Contacts
 
 本模块的作用是提供Dian团队联系人管理页面的CRUD接口
+**以下接口`Content Type`均为`application/json`**
 
 ## Add Contact
 

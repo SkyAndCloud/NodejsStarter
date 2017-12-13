@@ -8,5 +8,7 @@
   "instances": "1",
   "merge_logs": true,
   "exec_mode": "cluster_mode",
-  "port": 20170
+  "env": {
+    "PORT": 20170    
+  }
 }

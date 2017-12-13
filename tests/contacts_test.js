@@ -7,7 +7,7 @@ const debug = require('debug')('TEST');
 chai.use(require('chai-http'));
 chai.use(require('chai-json-schema'));
 
-let baseUrl = 'localhost:3000'
+let baseUrl = 'localhost:20170';
 let addContactsJsonSchema = {
     title: 'Add Contacts Response JSON Schema',
     type: 'object',
