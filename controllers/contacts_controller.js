@@ -47,7 +47,7 @@ exports.updateContact = async params => {
 async function _validateAddContactParams(params) {
     let schema = {
         phone: Joi.string().regex(/^[0-9]+$/, 'numbers').length(11).trim().required(),
-        name: Joi.string().min(3).max(30).trim().required(),
+        name: Joi.string().min(1).max(10).trim().required(),
         email: Joi.string().email().trim()
     }
     let options = {
@@ -74,7 +74,7 @@ async function _validateUpdateContactParams(params) {
     let schema = {
         contact_id: Joi.string().trim().required(),
         phone: Joi.string().regex(/^[0-9]+$/, 'numbers').length(11).trim().required(),
-        name: Joi.string().min(3).max(30).trim().required(),
+        name: Joi.string().min(1).max(10).trim().required(),
         email: Joi.string().email().trim()
     };
     let options = {
