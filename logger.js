@@ -1,14 +1,13 @@
-let winston = require('winston');
+const winston=require('winston');
 
-winston.loggers.add('ContactsLogger', {
-    console: {
-        colorize: 'true',
-        label: 'ContactsLogger'
-    },
-    file: {
-        colorize: 'true',
-        filename: './logs/contacts.log',
-        maxsize: 5242880,
-        maxFiles: 20
-    }
-});
+let ContactsLogger=new winston.Logger({
+    level: "verbose",
+    transports:[
+        new (winston.transports.File)({
+            filename:'logs/contacts.log'
+        }),
+        new (winston.transports.Console)()
+    ]
+})
+
+module.exports.logger=ContactsLogger;

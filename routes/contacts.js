@@ -2,7 +2,7 @@
 
 let express = require('express');
 let router = express.Router();
-let ContactsLogger = require('winston').loggers.get('ContactsLogger');
+let ContactsLogger = require('../logger').ContactsLogger;
 let ContactsController = require('../controllers/contacts_controller');
 
 router.post('/', async (req, res, next) => {
