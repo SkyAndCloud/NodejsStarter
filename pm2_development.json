@@ -9,6 +9,8 @@
   "merge_logs": true,
   "exec_mode": "cluster_mode",
   "env": {
-    "PORT": 20170    
+    "PORT": 20170,
+    "NODE_CONFIG_DIR": "./configs",
+    "NODE_ENV": "development"
   }
 }
