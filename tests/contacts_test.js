@@ -3,11 +3,11 @@
 let chai = require('chai');
 let expect = require('chai').expect;
 const debug = require('debug')('TEST');
-let config = require('config');
 
 chai.use(require('chai-http'));
 chai.use(require('chai-json-schema'));
 
+let baseUrl = (NODE_ENV === production) ? 'http://13.230.86.164:20170' : 'http://localhost:20170';
 let addContactsJsonSchema = {
     title: 'Add Contacts Response JSON Schema',
     type: 'object',
@@ -41,7 +41,7 @@ describe('Contacts API', () => {
             name: 'yshan',
             email: 'email@email.com'
         };
-        chai.request(config.BaseUrl)
+        chai.request(baseUrl)
             .post('/contacts')
             .send(testBody)
             .end((err, res) => {
@@ -58,7 +58,7 @@ describe('Contacts API', () => {
     });
 
     it('Query All Contacts', done => {
-        chai.request(config.BaseUrl)
+        chai.request(baseUrl)
             .get('/contacts')
             .end((err, res) => {
                 if (err) {
@@ -73,7 +73,7 @@ describe('Contacts API', () => {
     });
 
     it('Update Contact', done => {
-        chai.request(config.BaseUrl)
+        chai.request(baseUrl)
             .put(`/contacts/${contact.contact_id}`)
             .send({
                 phone: '18827054819',
@@ -92,7 +92,7 @@ describe('Contacts API', () => {
     });
 
     it('Delete Contact', done => {
-        chai.request(config.BaseUrl)
+        chai.request(baseUrl)
             .del(`/contacts/${contact.contact_id}`)
             .end((err, res) => {
                 if (err) {
